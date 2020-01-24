@@ -1,0 +1,54 @@
+.button-body {
+    display: flex;
+    height: 75px;
+    width: 73px;
+    margin: 1px;
+    justify-content: center;
+    line-height: 66px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+}
+
+.button-color-grey {
+    background: #7c7f82;
+}
+
+.button-color-grey:hover {
+    cursor: pointer;
+    box-shadow: inset 0px 1px 2px 2px #868a8a;
+}
+
+.button-color-grey:active {
+    box-shadow: inset 0px 1px 6px 9px #727777;
+}
+
+
+.button-color-orange {
+    background: #ff8400;
+}
+
+.button-color-orange:hover {
+    cursor: pointer;
+    box-shadow: inset 0px 1px 2px 2px #ffac52;
+}
+
+.button-color-orange:active {
+    box-shadow: inset 0px 1px 6px 9px #f9790c;
+}
+
+.button-color-white {
+    width: 148px;
+    color: black;
+    background: white;
+}
+
+.button-color-white:hover {
+    cursor: pointer;
+    box-shadow: inset 0px 1px 2px 2px #dad9d9;
+}
+
+.button-color-white:active {
+    box-shadow: inset 0px 1px 6px 9px #dad9d9;
+}

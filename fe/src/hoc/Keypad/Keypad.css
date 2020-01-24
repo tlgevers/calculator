@@ -1,0 +1,6 @@
+.keypad-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: 'Pontano Sans', sans-serif;
+}
