@@ -7,6 +7,8 @@ import Keypad from './hoc/Keypad/Keypad'
 
 import * as calc from './logic/calc'
 
+export const Operators = "/x-+"
+
 class App extends React.Component {
     state = {
         args: "",
@@ -15,6 +17,25 @@ class App extends React.Component {
     }
 
     getAction = (a) => {
+        console.log("action received", this.state.previousArg)
+        if (Operators.includes(a) && this.state.currentArgs === "") {
+            // TODO communicate to user that no number has been added yet
+            return 
+        }
+        if (Operators.includes(this.state.previousArg) && this.state.previousArg !== "") {
+            // TODO replace previous operation, update screen history, ensure all args is clean
+            return
+        }
+        if (a === "+/-") {
+            if (this.state.currentArgs[0] === "-") {
+                let currentArgs = this.state.currentArgs.substr(1);
+                this.setState({currentArgs: currentArgs})
+                return
+            }
+            let currentArgs = "-" + this.state.currentArgs;
+            this.setState({currentArgs: currentArgs})
+            return
+        }
         if (a === "c") {
             this.setState({args: ""})
             return
@@ -28,8 +49,6 @@ class App extends React.Component {
             })
             return
         }
-
-        console.log("action received", a)
         let newArgs = calc.concatenateArgs(this.state.args, a)
         let currentArgs = calc.concatenateArgs(this.state.currentArgs, a)
         this.setState({args: newArgs, currentArgs: currentArgs})
