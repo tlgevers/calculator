@@ -1,9 +1,11 @@
 import React from 'react';
 import './Screen.css';
 
-function Screen() {
+function Screen(props) {
     return(
-        <div className="screen-body"></div>
+        <div className="screen-body">
+            <p id="screen-input">{props.args}</p>
+        </div>
     )
 }
 

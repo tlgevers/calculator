@@ -6,22 +6,40 @@ function Button(props) {
     let button = null;
     switch(props.symbol) {
         case "/":
-            button = <div className="button-body button-color-orange">{props.symbol}</div>
-            break;
+            button = <div 
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-orange">{props.symbol}
+            </div>
+                break;
         case "x":
-            button = <div className="button-body button-color-orange">{props.symbol}</div>
-            break;
+            button = <div
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-orange">{props.symbol}
+            </div>
+                break;
         case "-":
-            button = <div className="button-body button-color-orange">{props.symbol}</div>
-            break;
+            button = <div 
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-orange">{props.symbol}
+            </div>
+                break;
         case "+":
-            button = <div className="button-body button-color-orange">{props.symbol}</div>
-            break;
+            button = <div 
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-orange">{props.symbol}
+            </div>
+                break;
         case "=":
-            button = <div className="button-body button-color-white">{props.symbol}</div>
-            break;
+            button = <div 
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-white">{props.symbol}
+            </div>
+                break;
         default:
-            button = <div className="button-body button-color-grey">{props.symbol}</div>
+            button = <div 
+                onClick={() => props.getAction(props.symbol)} 
+                className="button-body button-color-grey">{props.symbol}
+            </div>
     }
     return(
         <Aux>

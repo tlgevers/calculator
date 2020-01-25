@@ -2,7 +2,8 @@ import React from 'react';
 import './Keypad.css'
 import Button from '../../components/Button/Button';
 
-function Keypad() {
+function Keypad(props) {
+    console.log("Keypad props", props)
     const buttons = [
         {id: "clear", symbol: "c"},
         {id: "plusminus", symbol: "+/-"},
@@ -28,7 +29,7 @@ function Keypad() {
         <div className="keypad-body">
             {buttons.map(
                 b => {
-                    return (<Button key={b.symbol} symbol={b.symbol} />)
+                    return (<Button getAction={props.getAction} key={b.symbol} symbol={b.symbol} />)
                 }
             )}
         </div>
