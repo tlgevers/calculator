@@ -4,21 +4,29 @@
     width: 100%;
     border: solid 1px grey;
     background: #abdfff;
+    flex-direction: column;
 }
 
-p {
+#screen-history {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 13px;
+    text-align: right;
+    width: 97%;
+    padding: 2px;
+    color: #656464;
+}
+
+#screen-input {
     font-family: 'Orbitron', sans-serif;
     font-style: italic;
     text-align: right;
     width: 95%;
     margin: 5px;
-    padding: 6px;
+    padding: 0px;
     line-height: 44px;
     font-size: 35px;
-    color: #444444;
-    overflow-wrap: break-word;
-    overflow-y: scroll;
-    white-space: pre-wrap;
+    color: #2f2f2f;    
+    height: 40%;
 }
 
 p::-webkit-scrollbar {

@@ -9,7 +9,9 @@ import * as calc from './logic/calc'
 
 class App extends React.Component {
     state = {
-        args: ""
+        args: "",
+        previousArg: "",
+        currentArgs: ""
     }
 
     getAction = (a) => {
@@ -17,18 +19,30 @@ class App extends React.Component {
             this.setState({args: ""})
             return
         }
+        var numbers = /^[0-9]+$/;
+        if (a.match(numbers) === null) {
+            this.setState({
+                args: "",
+                previousArg: this.state.currentArgs + a,
+                currentArgs: ""
+            })
+            return
+        }
+
         console.log("action received", a)
         let newArgs = calc.concatenateArgs(this.state.args, a)
-        this.setState({args: newArgs})
-        let screenInput = document.getElementById("screen-input")
-        screenInput.scrollBy(1, screenInput.scrollHeight)
+        let currentArgs = calc.concatenateArgs(this.state.currentArgs, a)
+        this.setState({args: newArgs, currentArgs: currentArgs})
     }
 
     render() {
         return (
             <div className="App">
                 <Body>
-                    <Screen args={this.state.args} /> 
+                    <Screen 
+                        currentArgs={this.state.currentArgs} 
+                        previousArg={this.state.previousArg}
+                    /> 
                     <Keypad getAction={this.getAction} />
                 </Body>
             </div>
